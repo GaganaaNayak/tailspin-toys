@@ -18,6 +18,15 @@ This repository is a GitHub template. When you create a new repository from it, 
 
 The workflow only runs on repositories created from the template (the `if: ${{ !github.event.repository.is_template }}` guard skips the template itself), and after creating the issues it removes itself and the `.github/bootstrap-issues/` folder in a cleanup commit so it never runs again.
 
+## Repository coding standards
+
+The project standard is to document intent, not mechanics. Comments should explain why a decision exists, what invariant is being preserved, or what trade-off was chosen; they should not restate what the code already clearly says. Stale comments are treated as bugs and should be updated or removed in the same change set.
+
+- Exported functions in `db/` and `src/lib/` require TSDoc/JSDoc with clear parameter and return descriptions.
+- Reusable `.astro` components should document their `Props` interface and any non-obvious contract details.
+- TypeScript code should use explicit parameter and return types and avoid `any` where possible; ESLint is configured to flag explicit `any` usage.
+- The source of truth for these standards lives in `.github/copilot-instructions.md` and the `.github/instructions/*.md` files.
+
 ## Getting started
 
 Install dependencies once with Node.js 22.13 or later:
