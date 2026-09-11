@@ -27,6 +27,8 @@ export default [
         "error",
         { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
       ],
+      // Prefer explicit types and avoid `any` in app code when possible.
+      "@typescript-eslint/no-explicit-any": "error",
     },
   },
 

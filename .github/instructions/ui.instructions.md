@@ -51,6 +51,12 @@ Refer to technology-specific instruction files:
 - Use props for configuration, not duplication
 - Document component APIs with TypeScript types
 
+## Comment Philosophy
+
+- Comment the reason for a choice, not the mechanics of the code. Explain the decision, invariant, trade-off, or edge case; avoid restating the obvious implementation.
+- Delete stale comments when code changes; outdated comments are correctness bugs in the same way as stale logic.
+- Reusable component contracts belong in the `Props` interface and should explain what each field means; reserve inline comments for non-obvious intent that the API surface alone cannot capture.
+
 ## Development Workflow
 
 1. **Choose the right tool**: 
